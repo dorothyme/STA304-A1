@@ -18,7 +18,7 @@ library(dplyr)
 ## Introduction
   As migration becomes more prevalent in this growingly interconnected international society, the domestic attitudes towards immigrants and refugees, as two comparable sources of newcomers, have become an important aspect of consideration when it comes to policy making and election running. While research has shown that individuals tend to deposition more favorability towards refugees than other types of migrants due to media framing (Coninck, 2020), public opinions on immigration and refuge are largely consistent at both continental and global scales (Dempster & Hargrave, 2017). Moreover, in younger, more liberal and better educated populations, less hostility were observed towards both immigrants and refugees (Dempster & Hargrave, 2017). In this report,I will visualize data from the 2019 Canada Election phone survey to show if there is a consistency between public opinions towards immigrants and refugees, as well as to navigate if these attitudes can be associated to education levels. 
 
-```{r}
+```{r, echo=true}
 # Retrieve data and select the columns of interest. 
 get_ces("ces2019_phone")
 ces2019_phone <- ces2019_phone %>% select(sample_id, q61, q39, q40)
