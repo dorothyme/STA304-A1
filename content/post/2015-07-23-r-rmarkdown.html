@@ -16,6 +16,7 @@ tags: ["R Markdown", "plot", "regression"]
 library(devtools)
 library(tidyverse)
 library(dplyr)
+library(knitr)
 devtools::install_github("hodgettsp/cesR")
 library(cesR)
 ```
@@ -41,6 +42,7 @@ ces2019_phone$Attitude_toward_Refugees[ces2019_phone$Attitude_toward_Refugees ==
 ces2019_phone %>% ggplot(mapping = aes(x = Attitude_toward_Immigrants, fill = Attitude_toward_Refugees)) + geom_histogram(stat="count", bins = 20, binwidth = 0.5) +
   theme(axis.text.x = element_text(angle = 90)) + 
   labs(title = "Attitudes Toward Immigrants & Refugees") + facet_wrap(~Education)
+knitr::include_graphics("/histogram.png")
 ```
 ## Discussion 
   The graph is plotted by education group: responses from those who possess at least a Bachelor's degree were plotted on the left, and those who didn't on the right. Within each education group, attitudes toward immigrants are plotted at the x-axis, and the y-axis shows the number of counts for each type of response. The filling of each bar is the attitudes toward refugees, separated by color. 
