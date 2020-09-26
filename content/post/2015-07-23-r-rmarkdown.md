@@ -19,7 +19,7 @@ library(knitr)
 ## Introduction
   As migration becomes more prevalent in this growingly interconnected international society, the domestic attitudes towards immigrants and refugees, as two comparable sources of newcomers, have become an important aspect of consideration when it comes to policy making and election running. While research has shown that individuals tend to deposition more favorability towards refugees than other types of migrants due to media framing (Coninck, 2020), public opinions on immigration and refuge are largely consistent at both continental and global scales (Dempster & Hargrave, 2017). Moreover, in younger, more liberal and better educated populations, less hostility were observed towards both immigrants and refugees (Dempster & Hargrave, 2017). In this report,I will visualize data from the 2019 Canada Election phone survey to show if there is a consistency between public opinions towards immigrants and refugees, as well as to navigate if these attitudes can be associated to education levels. 
 
-```{r}
+```{r, echo=FALSE}
 # Retrieve data and select the columns of interest. 
 get_ces("ces2019_phone")
 ces2019_phone <- ces2019_phone %>% select(sample_id, q61, q39, q40)
@@ -38,7 +38,6 @@ ces2019_phone$Attitude_toward_Refugees[ces2019_phone$Attitude_toward_Refugees ==
 ces2019_phone %>% ggplot(mapping = aes(x = Attitude_toward_Immigrants, fill = Attitude_toward_Refugees)) + geom_histogram(stat="count", bins = 20, binwidth = 0.5) +
   theme(axis.text.x = element_text(angle = 90)) + 
   labs(title = "Attitudes Toward Immigrants & Refugees") + facet_wrap(~Education)
-knitr::include_graphics("/histogram.png")
 ```
 ## Discussion 
   The graph is plotted by education group: responses from those who possess at least a Bachelor's degree were plotted on the left, and those who didn't on the right. Within each education group, attitudes toward immigrants are plotted at the x-axis, and the y-axis shows the number of counts for each type of response. The filling of each bar is the attitudes toward refugees, separated by color. 
