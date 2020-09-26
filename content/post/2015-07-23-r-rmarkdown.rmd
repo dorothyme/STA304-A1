@@ -12,6 +12,7 @@ tags: ["R Markdown", "plot", "regression"]
 # Set up tools 
 library(devtools)
 library(tidyverse)
+devtools::install_github("hodgettsp/cesR")
 library(cesR)
 library(dplyr)
 library(knitr)
